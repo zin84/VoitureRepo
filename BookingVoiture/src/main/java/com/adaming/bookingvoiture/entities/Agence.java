@@ -48,6 +48,7 @@ public class Agence {
     private String choixMonnais;
     
     /* associations */
+    @OneToMany
     @JoinColumn(name="fact")
     private List<Facture> factures;
     
