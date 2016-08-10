@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 import com.adaming.bookingvoiture.service.client.IClientService;
 
-@Component("ClientBean")
+/*@Component("ClientBean")
 @RequestScoped
 public class ClientBean {
 @Autowired
 	private IClientService serviceClient;
-}
+}*/

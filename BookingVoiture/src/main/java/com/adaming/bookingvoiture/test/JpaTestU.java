@@ -18,7 +18,7 @@ public class JpaTestU {
 		try {
 			 context = new ClassPathXmlApplicationContext( new String[]{"app.xml"});
 		} catch (Exception e) {
-			assertTrue(e.getMessage(),true);
+			assertTrue(e.getMessage(),false);
 		}
 	}
 

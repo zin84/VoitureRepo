@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 import com.adaming.bookingvoiture.service.voiture.IVoitureService;
 
-@Component("VoitureBean")
+/*@Component("VoitureBean")
 @RequestScoped
 public class VoitureBean {
 @Autowired
 	private IVoitureService serviceVoiture;
-}
+}*/

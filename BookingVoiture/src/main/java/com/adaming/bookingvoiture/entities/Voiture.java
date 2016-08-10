@@ -1,8 +1,9 @@
-package com.adaming.bookingvoiture.entities;
+﻿package com.adaming.bookingvoiture.entities;
 
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,8 +31,12 @@ public class Voiture {
     private String typeCarburant;
     private String etatVoiture;
     
-    @OneToMany(mappedBy="voitureReservation")
+    @OneToMany(mappedBy="voitureReservation", fetch=FetchType.EAGER)
     private List<Reservation> tabReservationVoiture;
+    
+    @OneToMany(mappedBy="voiture")
+    private List<Entretien> tabEntretienVoit;
+   
     
     //Constructors
     
@@ -130,6 +135,15 @@ public class Voiture {
 	public void setTabReservationVoiture(List<Reservation> tabReservationVoiture) {
 		this.tabReservationVoiture = tabReservationVoiture;
 	}
+
+	public List<Entretien> getTabEntretienVoit() {
+		return tabEntretienVoit;
+	}
+
+	public void setTabEntretienVoit(List<Entretien> tabEntretienVoit) {
+		this.tabEntretienVoit = tabEntretienVoit;
+	}
     
     
 }
+

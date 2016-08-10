@@ -13,4 +13,7 @@ public class FactureBean {
 
 	@Autowired
 	private IFactureService serviceFacture;
+	
+	private Long idFacture;
+	
 }

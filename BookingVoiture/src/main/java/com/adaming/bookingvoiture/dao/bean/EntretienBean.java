@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 
 import com.adaming.bookingvoiture.service.entretien.IEntretienService;
 
-@Component("EntretienBean")
+/*@Component("EntretienBean")
 @RequestScoped
 public class EntretienBean {
 
 	@Autowired
 	private IEntretienService serviceEntretien;
-}
+}*/

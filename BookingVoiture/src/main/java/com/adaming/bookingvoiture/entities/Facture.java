@@ -26,7 +26,7 @@ public class Facture {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idFacture;
     @Temporal(TemporalType.DATE)
-	private Date DateDeFacturation;
+	private Date dateDeFacturation;
 	
 	@OneToOne()
 	@JoinColumn(name = "reserv")
@@ -40,7 +40,7 @@ public class Facture {
 	/* constructeur avec parametres */
 	public Facture(Date dateDeFacturation) {
 		super();
-		DateDeFacturation = dateDeFacturation;
+		dateDeFacturation = dateDeFacturation;
 	}
 	/* accesseurs */
 	public Long getIdFacture() {
@@ -50,10 +50,10 @@ public class Facture {
 		this.idFacture = idFacture;
 	}
 	public Date getDateDeFacturation() {
-		return DateDeFacturation;
+		return dateDeFacturation;
 	}
 	public void setDateDeFacturation(Date dateDeFacturation) {
-		DateDeFacturation = dateDeFacturation;
+		dateDeFacturation = dateDeFacturation;
 	}
 	
 	@JsonIgnore
@@ -69,7 +69,7 @@ public class Facture {
 	/* redefinition de toString */
 	@Override
 	public String toString() {
-		return "Facture [idFacture=" + idFacture + ", DateDeFacturation=" + DateDeFacturation + "]";
+		return "Facture [idFacture=" + idFacture + ", DateDeFacturation=" + dateDeFacturation + "]";
 	}
 
 }

@@ -1,11 +1,9 @@
-package com.adaming.bookingvoiture;
+package com.adaming.bookingvoiture.entities;
 
 import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-
-import com.adaming.bookingvoiture.entities.Entretien;
 
 @Entity
 @DiscriminatorValue("FiltreHuile")
