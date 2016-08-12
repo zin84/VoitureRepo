@@ -9,6 +9,13 @@
 		<param-value>classpath*:app.xml</param-value>
 	</context-param>
 	
+	<context-param>
+    <param-name>BootsFaces_THEME</param-name>
+    <param-value>united</param-value>
+</context-param>
+	
+	
+
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -37,5 +44,12 @@
     <welcome-file>index.xhtml</welcome-file>
 
   </welcome-file-list>
+
+
+
+<error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/404.xhtml</location>
+</error-page>
 
 </web-app>

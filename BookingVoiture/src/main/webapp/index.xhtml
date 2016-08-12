@@ -1,11 +1,70 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	 xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Insert title here</title>
-</head>
-<body>
-Ma page index Test!!!!
-</body>
+</h:head>
+<h:body>
+
+ <ui:include src="navBar.xhtml"></ui:include>
+
+<b:panelGrid colSpans="6,6" id="stateGridId">
+  <h:form style="width:550px; padding-left:80px">
+    <b:panel style="width:550px" title="A propos"
+      look="danger">
+      <h:outputText value="Site de location de voitures : " /><br/>
+         &nbsp;&nbsp;<h:graphicImage value="img/check-square.png"/>&nbsp;&nbsp;
+      <h:outputText value="Choisissez votre model favoris parmis notre game complète" /><br/>
+        &nbsp;&nbsp;<h:graphicImage value="img/check-square.png"/>&nbsp;&nbsp;<h:outputText value="Gérez les locations existantes" /><br/>
+       &nbsp;&nbsp;<h:graphicImage value="img/check-square.png"/>&nbsp;&nbsp; <h:outputText value="Vérifiez les disponibilités des voitures pour une période donnée" /><br/>
+        &nbsp;&nbsp;<h:graphicImage value="img/check-square.png"/>&nbsp;&nbsp;<h:outputText value="Vérifiez l'entretien des voitures " /><br/>
+        &nbsp;&nbsp;<h:graphicImage value="img/check-square.png"/>&nbsp;&nbsp;<h:outputText value="Consultez/imprimmez vos factures" /><br/><br/>
+        <h:outputText value=" Nos coordonnées :" /><br/>
+         &nbsp;&nbsp;<h:graphicImage value="img/home.png"/>&nbsp;&nbsp;<h:outputText value="96 rue Napoléon Bonaparte 75 001 PARIS" /><br/>
+          &nbsp;&nbsp;<h:graphicImage value="img/message.png"/>&nbsp;&nbsp;<h:outputText value="locationVoiture@location.fr" /><br/>
+           &nbsp;&nbsp;<h:graphicImage value="img/telephone.png"/>&nbsp;&nbsp;<h:outputText value="01-96-58-45-52" /><br/>
+            &nbsp;&nbsp;<h:graphicImage value="img/printer.png"/>&nbsp;&nbsp;<h:outputText value="01-96-58-45-56" /><br/>
+      <b:messages />
+    </b:panel>
+  </h:form>
+  <b:panel style="width:500px;" title="Retrouvez vos models préférés !"
+    look="danger">
+  
+    <h:graphicImage value="img/Audi.gif.xhtml.gif"/>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Audi" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h:graphicImage value="img/BMW.gif.xhtml.gif"/>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="BMW" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h:graphicImage value="img/Fiat.gif.xhtml.gif"/>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Fiat" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h:graphicImage value="img/Honda.gif.xhtml.gif"/>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Honda" /><br/><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h:graphicImage value="img/Volkswagen.gif.xhtml.gif"/>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Volkswagen" />&nbsp;&nbsp;&nbsp;&nbsp;
+    <h:graphicImage value="img/Volvo.gif.xhtml.gif"/>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Volvo" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h:graphicImage value="img/Renault.gif.xhtml.gif"/>&nbsp;&nbsp;&nbsp;&nbsp;<h:outputText value="Renault" /><br/><br/>
+    <h:form style="padding-left:70px">
+    <b:carousel id="parque" style="width:350px;">
+   <b:carouselItem >
+     <img src="img/Audi.jpg" style="width:350px; height: 200px"/>
+   </b:carouselItem>
+   <b:carouselItem>
+     <img src="img/BMW.jpg" alt="Valladolid" style="width:350px; height: 200px"/>
+   </b:carouselItem>
+   <b:carouselItem>
+     <img src="img/Fiat.jpg" alt="Valladolid" style="width:350px; height: 200px"/>
+   </b:carouselItem>
+   <b:carouselItem>
+     <img src="img/Honda.jpg" alt="Valladolid" style="width:350px; height: 200px"/>
+   </b:carouselItem>
+    <b:carouselItem>
+     <img src="img/Renault.jpg" alt="Valladolid" style="width:350px; height: 200px"/>
+   </b:carouselItem>
+</b:carousel>
+</h:form>
+    <b:messages />
+  </b:panel>
+</b:panelGrid>
+
+</h:body>
 </html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	 xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+
+ <b:navBar brand="Brand" brandHref="#" inverse="true" >
+    <b:navbarLinks>
+        <b:navLink value="Home" href="#"></b:navLink>
+        <b:navLink value="Link" href="#"></b:navLink>
+        <b:navLink value="Link" href="#"></b:navLink>
+        <b:dropMenu value="Voiture">
+            <b:navLink value="Ajouter" href="addVoiture.xhtml"></b:navLink>
+            <b:navLink value="Another action" href="#"></b:navLink>
+            <b:navLink value="Something else here" href="#"></b:navLink>
+            <b:navLink></b:navLink>
+            <b:navLink header="Nav header"></b:navLink>
+            <b:navLink value="Separated link" href="#"></b:navLink>
+            <b:navLink value="One more separated link" href="#"></b:navLink>
+        </b:dropMenu>
+    </b:navbarLinks>
+</b:navBar>
+
+
+
+
+<h:form>
+<b:carousel id="rioja" styleClass="riojaPseudoClass" style="width:100%; margin:auto;">
+ 
+   <b:carouselItem style="padding-left:35%">
+     <img src="img/Voiture1.png"  alt="Valladolid" style="width:400px; height: 290px" />
+   </b:carouselItem>
+   <b:carouselItem style="padding-left:35%">
+     <img src="img/Voiture6.jpg" alt="Valladolid" style="width:400px; height: 290px"/>
+   </b:carouselItem>
+   <b:carouselItem style="padding-left:35%">
+     <img src="img/Voiture2.png"  alt="Valladolid" style="width:400px; height: 290px"/>
+   </b:carouselItem>
+   <b:carouselItem style="padding-left:35%">
+     <img src="img/Voiture5.png"  alt="Valladolid" style="width:400px; height: 290px"/>
+   </b:carouselItem>
+   <b:carouselControl direction="right">
+     <div class="left carousel-control">
+     <b:commandButton value="previous image" role="button"
+                      onclick="$('.riojaPseudoClass').carousel('prev'); return false;"
+                      style="margin-top:140px"
+                      look="info"/>
+     </div>
+   </b:carouselControl>
+   <b:carouselControl direction="left">
+     <div class="right carousel-control">
+       <b:commandButton value="next image" role="button"
+                        onclick="$('.riojaPseudoClass').carousel('next'); return false;"
+                        style="margin-top:140px"
+                        look="info"/>
+     </div>
+   </b:carouselControl>
+</b:carousel>
+</h:form>
+<b:row style="text-align:center;">
+<h3 style="color:rgba(129,20,83,1); font-family:sans-serif; ">Site de location de voiture</h3>
+  <img src="img/loueur.jpg" style="width:130px; height: 130px"/>
+ 
+<br/><br/>
+</b:row>
+
+
+</h:body>
+</html>

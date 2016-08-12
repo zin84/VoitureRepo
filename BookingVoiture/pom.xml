@@ -60,6 +60,12 @@
 
 
 
+<dependency>
+    <groupId>net.bootsfaces</groupId>
+    <artifactId>bootsfaces</artifactId>
+    <version>0.9.1</version>
+    <scope>compile</scope>
+</dependency>
 		<!-- Apach POI 3.13 Excel dataExporter -->
 
 		<dependency>
