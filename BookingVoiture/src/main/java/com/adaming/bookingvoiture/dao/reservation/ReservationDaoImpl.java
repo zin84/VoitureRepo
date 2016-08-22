@@ -49,6 +49,7 @@ public class ReservationDaoImpl implements IReservationDao{
 			r.setVoitureReservation(v);
 			final int nbMiliSec=24*60*60*1000;
 			Long nbJours= (r.getDateDeSortie().getTime()-r.getDateDeRentrer().getTime())/nbMiliSec;
+			r.setNombresDeJours(nbJours);
 			double prixTot=v.getPrixLocationJournee()*nbJours;
 			r.setPrix(prixTot);
 			em.persist(r);
@@ -115,15 +116,17 @@ public class ReservationDaoImpl implements IReservationDao{
 
 	@Override
 	public Reservation deleteReservation(Long idReservation) throws ExceptionDeleteRes {
+		log.info("jsdfgqdsjlgosgfqdsjgrehrti'");
 		Reservation r=em.find(Reservation.class, idReservation);
-		if(r.getDateDeRentrer().after(new Date())){
-			em.remove(r);
-		}else if(r.getDateDeSortie().before(new Date())){
+		Date date=new Date();
+		if(r.getDateDeSortie().before(new Date())){
 			throw new ExceptionDeleteRes("Cette réservation est déjà passée");
-		}else{
+		}else if(r.getDateDeRentrer().before(date) && r.getDateDeSortie().after(date)){
 			throw new ExceptionDeleteRes("Cette réservation est en cours");
+		}else{
+			em.remove(r);
 		}
-		return null;
+		return r;
 	}
 
 }

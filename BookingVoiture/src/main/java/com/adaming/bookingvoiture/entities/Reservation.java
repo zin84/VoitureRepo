@@ -20,6 +20,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class Reservation {
 
+
 	//Attributs 
 	
 	@Id
@@ -34,7 +35,7 @@ public class Reservation {
 	  private Date dateDeSortie;
 	  private String heureDeSortie;
 	  private String heureDeRentrer;
-	  private Integer nombresDeJours;
+	  private Long nombresDeJours;
 	  private String etatDeReservation;
 	  
 	  @ManyToOne
@@ -56,16 +57,19 @@ public class Reservation {
 
 	public Reservation(Date dateDeReservation, Date dateDeRentrer,
 			Date dateDeSortie, String heureDeSortie, String heureDeRentrer,
-			Integer nombresDeJours, String etatDeReservation) {
+			String etatDeReservation) {
 		super();
 		this.dateDeReservation = dateDeReservation;
 		this.dateDeRentrer = dateDeRentrer;
 		this.dateDeSortie = dateDeSortie;
 		this.heureDeSortie = heureDeSortie;
 		this.heureDeRentrer = heureDeRentrer;
-		this.nombresDeJours = nombresDeJours;
 		this.etatDeReservation = etatDeReservation;
 	}
+
+
+
+
 
 	//Get and Set 
 	
@@ -125,14 +129,17 @@ public class Reservation {
 	public void setHeureDeRentrer(String heureDeRentrer) {
 		this.heureDeRentrer = heureDeRentrer;
 	}
+	
 
-	public Integer getNombresDeJours() {
+	public Long getNombresDeJours() {
 		return nombresDeJours;
 	}
 
-	public void setNombresDeJours(Integer nombresDeJours) {
+
+	public void setNombresDeJours(Long nombresDeJours) {
 		this.nombresDeJours = nombresDeJours;
 	}
+
 
 	public String getEtatDeReservation() {
 		return etatDeReservation;

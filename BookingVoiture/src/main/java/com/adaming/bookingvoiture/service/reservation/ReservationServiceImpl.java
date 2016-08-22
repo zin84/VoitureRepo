@@ -61,7 +61,6 @@ public class ReservationServiceImpl implements IReservationService {
 	@Override
 	public Reservation deleteReservation(Long idReservation)
 			throws ExceptionDeleteRes {
-		// TODO Auto-generated method stub
 		return daoReservation.deleteReservation(idReservation);
 	}
 }
