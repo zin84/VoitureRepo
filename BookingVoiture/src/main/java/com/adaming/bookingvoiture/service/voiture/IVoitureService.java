@@ -19,5 +19,6 @@ public interface IVoitureService {
 	public List<Voiture> voitureDispoToday() throws ExceptionDispoVoiture;
 	public List<Voiture> voitureDispoPeriode(Date dateDebut, Date dateFin) throws ExceptionDeleteVoiture;
 	public double alertEntretien(Long idVoiture) throws ExceptionKilometrage;
-	public List<Voiture> retourVoiture() throws ParseException;
+	public void alertAllEntretien() throws ExceptionKilometrage;
+	public List<Voiture> retourVoiture() throws ParseException, ExceptionDispoVoiture;
 }

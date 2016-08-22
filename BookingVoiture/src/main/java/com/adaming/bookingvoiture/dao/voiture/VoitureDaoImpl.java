@@ -120,15 +120,14 @@ public class VoitureDaoImpl implements IVoitureDao{
 			for(Entretien e:tabEntretien){
 				System.out.println("--------->"+tabEntretien.size());
 				kmRestant=e.getKilommetrage()-v.getKilometrage();
-		}if(kmRestant<0){
-			throw new ExceptionKilometrage("Un entretien de la voiture"+v.getImmatricule()+ "doit être réalisé !");
+				v.setKmRestantEntretien(kmRestant);
 		}
 		log.info("Prochain entretien dans "+kmRestant+" km");
 		return kmRestant;
 	}
 
 	@Override
-	public List<Voiture> retourVoiture() throws ParseException {
+	public List<Voiture> retourVoiture() throws ParseException, ExceptionDispoVoiture {
 		List<Voiture> tabVoiture=getVoitures();
 		List<Voiture> tabVoitureRetour=new ArrayList<Voiture>();
 		Calendar calendar= Calendar.getInstance();
@@ -146,8 +145,25 @@ public class VoitureDaoImpl implements IVoitureDao{
 				tabVoitureRetour.add(v);
 			}
 		}
+		}if(tabVoitureRetour.isEmpty()){
+			throw new ExceptionDispoVoiture("Aucun retour n'est prévu aujourd'hui");
 		}
 		return tabVoitureRetour;
+	}
+
+	@Override
+	public void alertAllEntretien() throws ExceptionKilometrage {
+		List<Voiture> tabVoit=getVoitures();
+		double kmRest=0;
+		for(Voiture v:tabVoit){
+			List<Entretien> tabRes=v.getTabEntretienVoit();
+			for(Entretien e:tabRes){
+				kmRest=e.getKilommetrage()-v.getKilometrage();
+				if(kmRest<0){
+					throw new ExceptionKilometrage("Un entretien de la voiture"+v.getModel()+", immatriculée"+v.getImmatricule()+ "doit être réalisé !");
+				}
+			}
+		}
 	}
 
 }

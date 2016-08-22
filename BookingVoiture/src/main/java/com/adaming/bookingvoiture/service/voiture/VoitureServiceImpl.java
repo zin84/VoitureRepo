@@ -79,8 +79,14 @@ public class VoitureServiceImpl implements IVoitureService {
 	}
 
 	@Override
-	public List<Voiture> retourVoiture() throws ParseException {
+	public List<Voiture> retourVoiture() throws ParseException, ExceptionDispoVoiture {
 		// TODO Auto-generated method stub
 		return daoVoiture.retourVoiture();
+	}
+
+	@Override
+	public void alertAllEntretien() throws ExceptionKilometrage {
+		daoVoiture.alertAllEntretien();
+		
 	}
 }
